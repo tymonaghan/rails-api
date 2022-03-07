@@ -12,6 +12,7 @@ require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 # require database cleaner at the top level
 require 'database_cleaner'
+Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
 # [...]
 # configure shoulda matchers to use rspec as the test framework and full matcher libraries for rails
@@ -22,7 +23,6 @@ Shoulda::Matchers.configure do |config|
   end
 end
 
-# [...]
 RSpec.configure do |config|
   # [...]
   # add `FactoryBot` methods
